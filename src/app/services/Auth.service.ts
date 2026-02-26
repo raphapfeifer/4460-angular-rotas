@@ -6,4 +6,17 @@ import { Injectable, signal } from "@angular/core";
 
 export class AuthService{
     private isAuthenticated = signal<boolean>(false);
+
+    login(){
+        this.isAuthenticated.set(true);
+    }
+
+    logout(){
+        this.isAuthenticated.set(false);
+    }
+
+    isLogin(){
+        return this.isAuthenticated();
+    }
+
 }
